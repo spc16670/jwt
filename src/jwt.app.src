@@ -1,0 +1,12 @@
+{application, jwt,
+    [
+        {description, "Encode/decode JSON Web Token"},
+        {vsn, git},
+        {registered, [jwt]},
+        {applications, [
+            kernel
+            ,stdlib
+            ,jsx
+        ]},
+        {env, []}
+    ]}.
