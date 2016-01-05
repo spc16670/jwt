@@ -54,7 +54,7 @@ decode(JWT) ->
 decode(JWT, Key) ->
     [Header_segment, Data] = binary:split(JWT, <<".">>),
     [Payload_segment, Crypto_segment] = binary:split(Data, <<".">>),
-    Payload = jsx:decode(base64url:decode(Payload_segment)),
+    Payload = jsx:decode(base64url:decode(Payload_segment),[return_maps]),
     case Key of
         undefined -> Payload;
         _ ->
